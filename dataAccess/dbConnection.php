@@ -1,9 +1,11 @@
 <?php
+	include ('dataAccess\dbConfig.php');
+	
 	Class Database{
 	 
-		private $server = "mysql:host=localhost;dbname=OLGSTORE";
-		private $username = "root";
-		private $password = "mysql";
+		private $server = "mysql:host=".DBHOST.";dbname=".DBNAME."";
+		private $username = DBUSER;
+		private $password = DBPWD;
 		private $options  = array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,);
 		protected $conn;
 		
@@ -21,7 +23,6 @@
 		public function close(){
 			$this->conn = null;
 		}
-	 
 	}
 
 	$pdo = new Database();
