@@ -140,7 +140,8 @@ CREATE TABLE `ContactInfo` (
   `ContactInfoId` int NOT NULL,
   `PhoneNumber` varchar(15) NOT NULL,
   `EmailAddress` varchar(50) NOT NULL,
-   CONSTRAINT CONTACT_PK PRIMARY KEY (ContactInfoId)
+   CONSTRAINT CONTACT_PK PRIMARY KEY (ContactInfoId),
+   UNIQUE INDEX EmailAddress (EmailAddress)
 )ENGINE=INNODB;
 
 CREATE TABLE `Vendor` (
